@@ -1,7 +1,7 @@
 ---
 downloads: ~/.ansible-downloads/
 
-configure_osx: true
+configure_osx: false
 
 # Set to 'true' to configure the Dock via dockutil.
 configure_dock: true
@@ -15,7 +15,6 @@ dockitems_remove:
  - Reminders
  - Maps
  - Photos
- - Messages
  - FaceTime
  - Notes
  - Music
@@ -23,18 +22,27 @@ dockitems_remove:
  - Safari
  - Freeform
 dockitems_persist:
+ - name: 'Steam'
+   path: '/Applications/Steam.app'
+   pos: 4
  - name: 'Google Chrome'
    path: '/Applications/Google Chrome.app'
    pos: 5
+ - name: 'Airmail Business'
+   path: '/Applications/Airmail Business.app'
+   pos: 6
+ - name: 'Fantastical'
+   path: '/Applications/Fantastical.app'
+   pos: 7   
  - name: 'Discord'
    path: '/Applications/Discord.app'
-   pos: 6
+   pos: 8
  - name: 'Visual Studio Code'
    path: '/Applications/Visual Studio Code.app'
-   pos: 7
- - name: 'iTerm2'
-   path: '/Applications/iTerm2.app'
-   pos: 8
+   pos: 9
+ - name: 'iTerm'
+   path: '/Applications/iTerm.app'
+   pos: 10
 
 configure_sudoers: false
 sudoers_custom_config: ''
@@ -66,6 +74,9 @@ homebrew_cask_apps:
   - discord
   - doxygen
   - iterm2
+  - steam
+  - microsoft-remote-desktop
+  - beyond-compare
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps:
@@ -73,6 +84,8 @@ mas_installed_apps:
   - { id: 1451685025, name: "Wireguard" }
   - { id: 497799835,  name: "Xcode" }
   - { id: 1538878817, name: "UTM" }
+  - { id: 1530968324, name: "Airmail for Business" }
+  - { id: 975937182,  name: "Fantastical" }
 mas_email: "raynorpat@gmail.com"
 mas_password: ""
 mas_signin_dialog: true
