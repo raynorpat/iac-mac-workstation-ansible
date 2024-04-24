@@ -29,22 +29,12 @@
     - import_tasks: tasks/sudoers.yml
       when: configure_sudoers
       tags: ['sudoers']
-  
-    - name: Verify password
-      become: yes
-      command: echo "sudo password verified"
-      changed_when: False
 
-    - name: Create basic directories
+    - name: Create basic directories under home directory.
       file:
         path: "{{ item.path }}"
         state: "{{ item.state }}"
       with_items: "{{ basic_dirs }}"
-
-    - name: Update homebrew
-      community.general.homebrew:
-        path: "{{ brew_exe_path }}"
-        update_homebrew: yes
 
     - import_tasks: tasks/osx.yml
       when: configure_osx
