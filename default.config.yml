@@ -43,12 +43,18 @@ sudoers_custom_config: ''
 #   %admin ALL=(ALL) NOPASSWD: ALL
 
 homebrew_installed_packages:
-  - doxygen
   - git
   - gh
   - go
   - gpg
   - openssl
+  - cmake
+  - sdl2
+  - sdl2_image
+  - sdl2_ttf
+  - sdl2_mixer
+  - sdl2_net
+  - openal-soft
 
 homebrew_taps: []
 
@@ -57,12 +63,14 @@ homebrew_cask_apps:
   - google-chrome
   - visual-studio-code
   - discord
+  - doxygen
+  - iterm2
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps:
   - { id: 1352778147, name: "Bitwarden" }
   - { id: 1451685025, name: "Wireguard" }
-  - { id: 497799835, name: "Xcode" }
+  - { id: 497799835,  name: "Xcode" }
   - { id: 1538878817, name: "UTM" }
 mas_email: "raynorpat@gmail.com"
 mas_password: ""
