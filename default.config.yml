@@ -1,0 +1,76 @@
+---
+downloads: ~/.ansible-downloads/
+
+configure_osx: true
+
+# Set to 'true' to configure the Dock via dockutil.
+configure_dock: true
+dockitems_remove: []
+ - TV
+ - Podcasts
+ - News
+ - Mail
+ - Contacts
+ - Calendar
+ - Reminders
+ - Maps
+ - Photos
+ - Messages
+ - FaceTime
+ - Notes
+ - Music
+ - 'System Preferences'
+ - Safari
+dockitems_persist:
+ - name: "Terminal"
+   path: "/Applications/Utilities/Terminal.app"
+   pos: 5
+ - name: "Google Chrome"
+   path: "/Applications/Google Chrome.app"
+   pos: 6
+ - name: "Visual Studio Code"
+   path: "/Applications/Visual Studio Code.app"
+   pos: 7
+ - name: "Discord"
+   path: "/Applications/Discord.app"
+   pos: 8
+
+configure_sudoers: false
+sudoers_custom_config: ''
+# Example:
+# sudoers_custom_config: |
+#   # Allow users in admin group to use sudo with no password.
+#   %admin ALL=(ALL) NOPASSWD: ALL
+
+homebrew_installed_packages:
+  - doxygen
+  - git
+  - gh
+  - go
+  - gpg
+  - openssl
+
+homebrew_taps:
+  - homebrew/core
+  - homebrew/cask
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - google-chrome
+  - visual-studio-code
+  - discord
+
+# See `geerlingguy.mas` role documentation for usage instructions.
+mas_installed_apps:
+  - { id: 1352778147, name: "Bitwarden" }
+  - { id: 1451685025, name: "Wireguard" }
+  - { id: 497799835, name: "Xcode" }
+  - { id: 1538878817, name: "UTM" }
+mas_email: "raynorpat@gmail.com"
+mas_password: ""
+mas_signin_dialog: true
+
+osx_script: "~/.osx --no-restart"
+
+# Glob pattern to ansible task files to run after all other tasks are finished.
+post_provision_tasks: []
